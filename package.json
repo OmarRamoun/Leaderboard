@@ -4,9 +4,14 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack"
+    "hint": "npx hint --telemetry=off .",
+    "lint": "npx stylelint \"**/*.{css,scss}\"",
+    "jlint": "npx eslint .",
+    "fjlint": "npx eslint . --fix",
+    "test": "jest --verbose --coverage",
+    "build": "webpack --mode production --config webpack.config.js",
+    "dev": "webpack --config webpack.config.dev.js && webpack serve --open",
+    "start": "webpack --mode production --config webpack.config.js && webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -35,5 +40,8 @@
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1"
+  },
+  "dependencies": {
+    "package-lock.json": "^1.0.0"
   }
 }
